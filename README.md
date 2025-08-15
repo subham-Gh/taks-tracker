@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+Personal Task Manager
+A modern, responsive web application to manage tasks efficiently with a touch of AI-like intelligence and voice input. Built with React and styled with Tailwind CSS, this app allows users to create, edit, and track tasks seamlessly, with a unique feature to parse natural language input (e.g., "Buy milk tomorrow") via a mock AI parser and voice commands using the Web Speech API. Perfect for organizing daily todos with a professional and intuitive UI.
+Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Task Management: Add, edit, delete tasks, and mark them as completed with a clean, user-friendly interface.
+Natural Language Parsing: Input tasks in natural language (e.g., "Finish report by tomorrow with work, urgent") and let the mock AI parser extract the title, deadline, and tags automatically.
+Voice Input: Use the Google Material Icons microphone to create tasks via speech, leveraging the Web Speech API for transcription, seamlessly integrated with the mock AI parser.
+Categories/Tags: Assign comma-separated tags to tasks for easy organization (e.g., "work, urgent").
+Responsive Design: Built with Tailwind CSS, the app adapts beautifully to mobile and desktop screens.
+Local Storage: Tasks are persisted in the browser's localStorage for a lightweight, offline experience.
 
-## Available Scripts
+Tech Stack
 
-In the project directory, you can run:
+Frontend: React (single-page application with reusable components)
+Styling: Tailwind CSS (via CDN for rapid, utility-first styling)
+Icons: Google Material Icons (via CDN for professional UI elements)
+Storage: Browser localStorage for task persistence
+Speech Recognition: Web Speech API for voice input
+Mock AI: Custom JavaScript parser for natural language processing (extensible to xAI API)
 
-### `npm start`
+Getting Started
+Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js (v16 or higher)
+A modern browser (Chrome/Edge recommended for Web Speech API support)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installation
 
-### `npm test`
+Clone the repository:git clone https://github.com/your-username/task-manager.git
+cd task-manager
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install dependencies:npm install
 
-### `npm run build`
+Start the development server:npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will open at http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Add a Task: Type a task (e.g., "Call mom tomorrow with family") in the textarea and click "Parse with AI" to auto-fill the form, or manually enter title, deadline, and tags.
+Voice Input: Click the microphone icon (Google Material Icons), speak your task, and watch the form populate automatically.
+Manage Tasks: Edit, delete, or mark tasks as completed. Tasks are saved in localStorage and persist across sessions.
+Responsive UI: Try resizing the browser or accessing on mobile to see the adaptive layout.
 
-### `npm run eject`
+Project Structure
+task-manager/
+├── public/
+│ ├── index.html # Includes Tailwind CSS and Google Material Icons CDNs
+├── src/
+│ ├── components/ # React components (TaskForm, TaskList, TaskItem, Header)
+│ ├── hooks/ # Custom hook (useTasks) for task management
+│ ├── services/ # Mock AI parser (aiService.js)
+│ ├── utils/ # Local storage helper (storage.js)
+│ ├── App.js # Main app component
+│ ├── index.js # Entry point
+├── .gitignore # Ignores node_modules, .env, etc.
+├── package.json # Dependencies and scripts
+├── README.md # You're reading it!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Future Enhancements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Integrate xAI's Grok API for real natural language processing (see xAI API).
+Add animations for the microphone icon (e.g., pulsing when listening).
+Support more date formats in the mock parser (e.g., "August 20th").
+Add task filtering by tags or sorting by deadline.
+Implement dark mode with Tailwind's dark: classes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Why This Project?
+I built this app to explore modern web development with React, Tailwind CSS, and the Web Speech API, while simulating AI capabilities through a custom parser. It’s a practical tool for task management and a showcase of my ability to integrate APIs, create responsive UIs, and design extensible features. Try it out and let me know your feedback!
+License
+MIT License - feel free to use and modify this project.
